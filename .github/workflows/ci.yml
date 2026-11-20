@@ -102,3 +102,16 @@ jobs:
     steps:
       - name: Build message
         run: echo "Build successful - all tests passed"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Deployment message
+        run: echo "Deployment in progress"
+
+      - name: Check deployment token
+        env:
+          TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: test -n "$TOKEN" && echo "Token present"
