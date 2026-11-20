@@ -101,4 +101,4 @@ jobs:
     needs: [python, node, java, php]
     steps:
       - name: Build message
-        run: echo "Build successful: all tests passed"
+        run: echo "Build successful - all tests passed"
