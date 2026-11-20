@@ -46,4 +46,4 @@ def test_moyenne(conn):
     add_student(conn, "cookie", 10)
     add_student(conn, "amanda", 14)
 
-    assert average_grade(conn) == 13.0
+    assert average_grade(conn) == 12.0
